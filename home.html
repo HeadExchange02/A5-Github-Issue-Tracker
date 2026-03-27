@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Github Issue Tracker | Home</title>
+
+    <link rel="shortcut icon" href="Assets/github-logo.png" type="image/x-icon">
+
+    <!-- Tailwind + Daisy UI -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body>
+    <header class="w-11/12 mx-auto">
+        <div>
+            <div class="navbar bg-base-100 shadow-sm">
+                <div class="flex flex-1 items-center gap-1">
+                    <img src="Assets/github-logo.png" class="max-h-5 max-w-5" alt="">
+                    <h3 class="font-semibold text-xl">Github Issue Tracker</h3>
+                </div>
+                <div class="flex gap-2">
+                    <input type="text" placeholder="Search" class="input input-bordered px-5 py-1.5 rounded-full text-sm w-30 md:w-auto" />
+                    <button id="add-issue-btn" class="btn btn-soft btn-primary rounded-full cursor-pointer transition-all duration-200">Search</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="w-11/12 mx-auto">
+        <div id="tab-btns" class="shadow-xl p-3 mt-4">
+            <button id="tab-all" class="btn rounded-full btn-soft btn-primary cursor-pointer transition-all duration-200" onclick="changeTab()">All</button>
+            <button id="tab-open" class="btn rounded-full btn-soft btn-primary cursor-pointer transition-all duration-200" onclick="changeTab()">Open</button>
+            <button id="tab-closed" class="btn rounded-full btn-soft btn-primary cursor-pointer transition-all duration-200" onclick="changeTab()">Closed</button>
+        </div>
+
+        <div class="bg-[#F6F8FA] border border-gray-300 rounded-t-lg p-4 flex items-center justify-between text-sm font-bold shadow-sm">
+            <div class="flex items-center gap-2">
+                <img class="bg-purple-200 p-1.5 rounded-full" src="Assets/Aperture.png" alt="">
+                <h3 id="issue-total" class="text-center">0 Issues Found</h3>
+            </div>
+
+            <div class="flex gap-6">
+                <span class="text-green-600">🟢 Open: <span id="open-total">0</span></span>
+                <span class="text-purple-600">🟣 Closed: <span id="closed-total">0</span></span>
+            </div>
+        </div>
+
+        <!-- Issue Container -->
+        <div id="issues-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 bg-white border-x border-b border-gray-300 p-6 rounded-b-lg min-h-[450px]">
+            
+        </div>
+    </section>
+
+    <script src="Scripts/script.js"></script>
+</body>
+
+</html>

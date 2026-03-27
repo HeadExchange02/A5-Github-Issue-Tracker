@@ -5,7 +5,87 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Github Issue Tracker</title>
 </head>
+<body><!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Github Issue Tracker | Login</title>
+    <link rel="shortcut icon" href="Assets/github-logo.png" type="image/x-icon">
+
+    <!-- Tailwind + Daisy UI -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Hind+Siliguri:wght@300;400;500;600;700&family=Manrope:wght@200..800&family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+    <style>
+        * {
+            font-family: "Geist", sans-serif;
+        }
+    </style>
+
+</head>
+
 <body>
+
+
+
+    <section class="mt-48">
+
+        <div class="card bg-base-100 w-full max-w-sm p-4 shrink-0 rounded-2xl shadow-2xl mx-auto">
+
+            <div class="space-y-4">
+
+                <img class="mx-auto" src="Assets/github-logo.png" alt="">
+                <h1 class="text-2xl font-semibold text-center">Github Issue Tracker</h1>
+
+            </div>
+
+            <div class="card-body">
+                <fieldset class="fieldset">
+                    <label class="label font-bold">Username</label>
+                    <input id="input-username" type="email" class="input rounded-3xl" placeholder="Enter Username"
+                        value="admin" />
+
+                    <label class="label font-bold">Password</label>
+                    <input id="input-password" type="password" class="input rounded-3xl" placeholder="Password"
+                        value="admin123" />
+
+                    <button id="signin-btn" class="btn btn btn-primary mt-4 rounded-full">Sing In</button>
+                </fieldset>
+            </div>
+
+            <div>
+                <div class="divider text-xs text-slate-300 my-6 tracking-widest uppercase">
+                    OR
+                </div>
+                <div class="bg-slate-50 p-5 rounded-2xl border border-slate-100">
+                    <p class="font-bold text-slate-500 text-[10px] mb-2 uppercase tracking-tight">
+                        Demo Credentials:
+                    </p>
+                    <div class="flex justify-around text-sm text-slate-600 font-medium">
+                        <p>User: <span class="text-slate-800">admin</span></p>
+                        <p>Pass: <span class="text-slate-800">admin123</span></p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <script src="Scripts/login.js"></script>
+
+</body>
+
+</html>
     
 </body>
 </html>

@@ -22,8 +22,10 @@
                     <h3 class="font-semibold text-xl">Github Issue Tracker</h3>
                 </div>
                 <div class="flex gap-2">
-                    <input type="text" placeholder="Search" class="input input-bordered px-5 py-1.5 rounded-full text-sm w-30 md:w-auto" />
-                    <button id="add-issue-btn" class="btn btn-soft btn-primary rounded-full cursor-pointer transition-all duration-200">Search</button>
+                    <input type="text" placeholder="Search"
+                        class="input input-bordered px-5 py-1.5 rounded-full text-sm w-30 md:w-auto" />
+                    <button id="add-issue-btn"
+                        class="btn btn-soft btn-primary rounded-full cursor-pointer transition-all duration-200">Search</button>
                 </div>
             </div>
         </div>
@@ -31,12 +33,25 @@
 
     <section class="w-11/12 mx-auto">
         <div id="tab-btns" class="shadow-xl p-3 mt-4">
-            <button id="tab-all" class="btn rounded-full btn-soft btn-primary cursor-pointer transition-all duration-200" onclick="changeTab()">All</button>
-            <button id="tab-open" class="btn rounded-full btn-soft btn-primary cursor-pointer transition-all duration-200" onclick="changeTab()">Open</button>
-            <button id="tab-closed" class="btn rounded-full btn-soft btn-primary cursor-pointer transition-all duration-200" onclick="changeTab()">Closed</button>
+            <button id="tab-all" onclick="changeTab('all', this)" class="btn rounded-full  btn-primary cursor-pointer transition-all duration-200">All</button>
+
+            <button id="tab-open" onclick="changeTab('open', this)" class="btn rounded-full btn-soft btn-primary cursor-pointer transition-all duration-200">Open</button>
+
+            <button id="tab-closed" onclick="changeTab('closed', this)" class="btn rounded-full btn-soft btn-primary cursor-pointer transition-all duration-200">Closed</button>
+
+            <!-- <button id="tab-all"
+                class="btn rounded-full btn-soft btn-primary cursor-pointer transition-all duration-200"
+                onclick="changeTab()">All</button>
+            <button id="tab-open"
+                class="btn rounded-full btn-soft btn-primary cursor-pointer transition-all duration-200"
+                onclick="changeTab()">Open</button>
+            <button id="tab-closed"
+                class="btn rounded-full btn-soft btn-primary cursor-pointer transition-all duration-200"
+                onclick="changeTab()">Closed</button> -->
         </div>
 
-        <div class="bg-[#F6F8FA] border border-gray-300 rounded-t-lg p-4 flex items-center justify-between text-sm font-bold shadow-sm">
+        <div
+            class="bg-[#F6F8FA] border border-gray-300 rounded-t-lg p-4 flex items-center justify-between text-sm font-bold shadow-sm">
             <div class="flex items-center gap-2">
                 <img class="bg-purple-200 p-1.5 rounded-full" src="Assets/Aperture.png" alt="">
                 <h3 id="issue-total" class="text-center">0 Issues Found</h3>
@@ -49,8 +64,9 @@
         </div>
 
         <!-- Issue Container -->
-        <div id="issues-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 bg-white border-x border-b border-gray-300 p-6 rounded-b-lg min-h-[450px]">
-            
+        <div id="issues-container"
+            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 bg-white border-x border-b border-gray-300 p-6 rounded-b-lg min-h-[450px]">
+
         </div>
     </section>
 

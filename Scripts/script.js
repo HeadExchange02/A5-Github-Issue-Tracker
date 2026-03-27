@@ -1,5 +1,10 @@
-const container = document.getElementById("issues-container")
+let allData = [];
 
+const container = document.getElementById("issues-container");
+const tabButtons = document.querySelectorAll('#tab-btns button');
+const allButton = document.getElementById("tab-all");
+const openButton = document.getElementById("tab-open");
+const closedButton = document.getElementById("tab-closed");
 // Fetch data from API
 async function allIssuesData() {
     const reponse = await fetch("https://phi-lab-server.vercel.app/api/v1/lab/issues");
@@ -13,11 +18,11 @@ async function allIssuesData() {
 function renderData(dataList) {
     console.log(container);
     container.innerHTML = "";
-    
+
     document.getElementById('issue-total').innerText = `${dataList.length} Issues Found`;
     document.getElementById('open-total').innerText = allData.filter(i => i.status === 'open').length;
     document.getElementById('closed-total').innerText = allData.filter(i => i.status === 'closed').length;
-    
+
     dataList.forEach(item => {
         const isOpen = item.status === 'open';
         const topBorder = isOpen ? 'border-t-green-500' : 'border-t-purple-500';
@@ -63,6 +68,19 @@ function renderData(dataList) {
         `;
         container.appendChild(card);
     })
+}
+
+// Change Tab Buttons
+function changeTab(type, btn) {
+    console.log(tabButtons);
+    tabButtons.forEach(button => {
+        button.classList.add("btn-soft")
+    })
+    btn.classList.remove("btn-soft");
+    btn.classList.add("btn-primary");
+
+    if (type === 'all') renderData(allData);
+    else renderData(allData.filter(i => i.status === type));
 }
 
 allIssuesData();

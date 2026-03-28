@@ -33,11 +33,14 @@
 
     <section class="w-11/12 mx-auto">
         <div id="tab-btns" class="shadow-xl p-3 mt-4">
-            <button id="tab-all" onclick="changeTab('all', this)" class="btn rounded-full  btn-primary cursor-pointer transition-all duration-200">All</button>
+            <button id="tab-all" onclick="changeTab('all', this)"
+                class="btn rounded-full  btn-primary cursor-pointer transition-all duration-200">All</button>
 
-            <button id="tab-open" onclick="changeTab('open', this)" class="btn rounded-full btn-soft btn-primary cursor-pointer transition-all duration-200">Open</button>
+            <button id="tab-open" onclick="changeTab('open', this)"
+                class="btn rounded-full btn-soft btn-primary cursor-pointer transition-all duration-200">Open</button>
 
-            <button id="tab-closed" onclick="changeTab('closed', this)" class="btn rounded-full btn-soft btn-primary cursor-pointer transition-all duration-200">Closed</button>
+            <button id="tab-closed" onclick="changeTab('closed', this)"
+                class="btn rounded-full btn-soft btn-primary cursor-pointer transition-all duration-200">Closed</button>
         </div>
 
         <div
@@ -54,8 +57,16 @@
         </div>
 
         <!-- Issue Container -->
-        <div id="issues-container"
-            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 bg-white border-x border-b border-gray-300 p-6 rounded-b-lg min-h-[450px]">
+        <div class="bg-white card card-body shadow-xl col-span-2 mx-auto items-center">
+            <div id="issues-container"
+                class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 bg-white border-x border-b border-gray-300 p-6 rounded-b-lg min-h-[450px]">
+                <!-- All Issues Show here Dinamically -->
+
+            </div>
+
+            <div id="loadingSpinner" class="hidden">
+                <span class="loading loading-dots loading-xl"></span>
+            </div>
 
         </div>
     </section>

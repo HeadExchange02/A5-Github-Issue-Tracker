@@ -5,10 +5,22 @@ const tabButtons = document.querySelectorAll('#tab-btns button');
 const allButton = document.getElementById("tab-all");
 const openButton = document.getElementById("tab-open");
 const closedButton = document.getElementById("tab-closed");
+
+// Loading Function
+function showLoading() {
+    loadingSpinner.classList.remove("hidden");
+}
+
+function hideLoading() {
+    loadingSpinner.classList.add("hidden");
+}
+
 // Fetch data from API
 async function allIssuesData() {
+    showLoading();
     const reponse = await fetch("https://phi-lab-server.vercel.app/api/v1/lab/issues");
     const data = await reponse.json()
+    hideLoading();
     allData = data.data;
     console.log(allData);
     renderData(allData);

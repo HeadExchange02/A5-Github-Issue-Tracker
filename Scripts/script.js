@@ -68,14 +68,20 @@ function renderData(dataList) {
             <h2 class="font-bold text-sm mb-2 text-gray-800 line-clamp-2">${item.title}</h2>
             <p class="text-xl text-gray-500 mb-6 flex-grow line-clamp-3">${item.description}</p>
 
-            <span class="${labelStyle} px-3 py-1 rounded-full text-[10px] font-black uppercase border">
+            <span class="${labelStyle} px-3 py-1 rounded-full text-[10px] bg-yellow-100 font-black uppercase border">
                 ${item.labels}
             </span>
 
             <div class="flex justify-between items-center pt-4 border-t border-gray-50 mt-auto">
-                <div class="flex items-center gap-2">
-                    <div class="w-6 h-6 bg-blue-500 text-white rounded-full flex items-center justify-center text-[10px] font-bold uppercase">${item.author[0]}</div>
-                    <span class="text-[11px] font-bold text-gray-700">${item.author}</span>
+                <div class="items-center gap-2 space-y-3">
+                    <div class="flex items-center gap-2">
+                        <div class="w-6 h-6 bg-blue-500 text-white rounded-full flex items-center justify-center text-[10px] font-bold uppercase">${item.author[0]}</div>
+                        <span class="text-[11px] font-bold text-gray-700">Author: ${item.author}</span>
+                    </div>
+                    <div>
+                        <span class="text-[11px] font-bold text-gray-700">Assignee: ${item.assignee}</span>
+                    </div>
+                    
                 </div>           
             </div>
         `;

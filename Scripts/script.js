@@ -109,12 +109,23 @@ async function getSingleIssue(id) {
 
     const modalBody = document.getElementById('modal-body-content');
     modalBody.innerHTML = `
-        <div class="mb-4"><span class="bg-blue-600 text-white text-[10px] px-2 py-1 rounded font-bold uppercase">${issue.label || 'N/A'}</span></div>
         <h3 class="font-black text-2xl text-gray-800 mb-4">${issue.title}</h3>
+        <div class="mb-4"><span class="bg-blue-600 text-white text-[10px] px-2 py-1 rounded font-bold uppercase">${issue.status || 'N/A'}</span></div>
         <p class="text-gray-600 text-sm mb-6 bg-gray-50 p-4 rounded-lg border-l-4 border-blue-200 italic">"${issue.description}"</p>
-        <div class="grid grid-cols-2 gap-4 text-xs font-bold uppercase text-gray-400">
-            <div><p>Reporter</p><p class="text-gray-800 text-sm">${issue.author}</p></div>
-            <div><p>Priority</p><p class="text-orange-500 text-sm">${issue.priority}</p></div>
+        <div class="flex justify-between gap- text-xs font-bold uppercase text-gray-400">
+            <div class="flex text-center items-center gap-5">
+                <p>Reporter: <span class="text-gray-800 text-sm">${issue.author}</span></p>
+                <p>Created At: <span class="text-gray-800 text-sm">${issue.createdAt}</span></p>
+            </div>
+            <div>
+                <p>Priority</p><p class="text-orange-500 text-sm">${issue.priority}</p>
+            </div>
+        </div>
+        <div class="flex justify-between gap-5 text-xs font-bold uppercase text-gray-400">
+            <div class="flex text-center items-center gap-4">
+                <p>Reporter: <span class="text-gray-800 text-sm">${issue.assignee}</span></p>
+                <p>Created At: <span class="text-gray-800 text-sm">${issue.updatedAt}</span></p>
+            </div>
         </div>
     `;
     document.getElementById('details_modal').showModal();

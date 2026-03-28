@@ -5,6 +5,7 @@ const tabButtons = document.querySelectorAll('#tab-btns button');
 const allButton = document.getElementById("tab-all");
 const openButton = document.getElementById("tab-open");
 const closedButton = document.getElementById("tab-closed");
+const detailsModal = document.getElementById("details_modal")
 
 // Loading Function
 function showLoading() {
@@ -84,7 +85,6 @@ function renderData(dataList) {
 
 // Change Tab Buttons
 function changeTab(type, btn) {
-    console.log(tabButtons);
     tabButtons.forEach(button => {
         button.classList.add("btn-soft")
     })
@@ -93,6 +93,24 @@ function changeTab(type, btn) {
 
     if (type === 'all') renderData(allData);
     else renderData(allData.filter(i => i.status === type));
+}
+
+async function getSingleIssue(id) {
+    const res = await fetch(`https://phi-lab-server.vercel.app/api/v1/lab/issue/${id}`);
+    const data = await res.json();
+    const issue = data.data;
+
+    const modalBody = document.getElementById('modal-body-content');
+    modalBody.innerHTML = `
+        <div class="mb-4"><span class="bg-blue-600 text-white text-[10px] px-2 py-1 rounded font-bold uppercase">${issue.label || 'N/A'}</span></div>
+        <h3 class="font-black text-2xl text-gray-800 mb-4">${issue.title}</h3>
+        <p class="text-gray-600 text-sm mb-6 bg-gray-50 p-4 rounded-lg border-l-4 border-blue-200 italic">"${issue.description}"</p>
+        <div class="grid grid-cols-2 gap-4 text-xs font-bold uppercase text-gray-400">
+            <div><p>Reporter</p><p class="text-gray-800 text-sm">${issue.author}</p></div>
+            <div><p>Priority</p><p class="text-orange-500 text-sm">${issue.priority}</p></div>
+        </div>
+    `;
+    document.getElementById('details_modal').showModal();
 }
 
 allIssuesData();

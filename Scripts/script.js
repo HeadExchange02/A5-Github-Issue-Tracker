@@ -75,8 +75,8 @@ function renderData(dataList) {
             <div class="flex justify-between items-center pt-4 border-t border-gray-50 mt-auto">
                 <div class="items-center gap-2 space-y-3">
                     <div class="flex items-center gap-2">
-                        <div class="w-6 h-6 bg-blue-500 text-white rounded-full flex items-center justify-center text-[10px] font-bold uppercase">${item.author[0]}</div>
-                        <span class="text-[11px] font-bold text-gray-700">Author: ${item.author}</span>
+                        
+                        <p class="text-[11px] font-bold text-gray-700 inline-flex items-center gap-2">Author: <span class="w-6 h-6 bg-blue-500 text-white rounded-full flex items-center justify-center text-[10px] font-bold uppercase">${item.author[0]}</span>${item.author}</p>
                     </div>
                     <div>
                         <span class="text-[11px] font-bold text-gray-700">Assignee: ${item.assignee}</span>
@@ -110,21 +110,22 @@ async function getSingleIssue(id) {
     const modalBody = document.getElementById('modal-body-content');
     modalBody.innerHTML = `
         <h3 class="font-black text-2xl text-gray-800 mb-4">${issue.title}</h3>
-        <div class="mb-4"><span class="bg-blue-600 text-white text-[10px] px-2 py-1 rounded font-bold uppercase">${issue.status || 'N/A'}</span></div>
+        <div class="mb-4"><span class="bg-black text-white text-[10px] px-2 py-1 rounded-full font-bold uppercase">${issue.status || 'N/A'}</span></div>
         <p class="text-gray-600 text-sm mb-6 bg-gray-50 p-4 rounded-lg border-l-4 border-blue-200 italic">"${issue.description}"</p>
+        <p class="px-3 py-1 rounded-full text-[10px] bg-yellow-100 font-black uppercase border">"${issue.labels}"</p>
         <div class="flex justify-between gap- text-xs font-bold uppercase text-gray-400">
-            <div class="flex text-center items-center gap-5">
-                <p>Reporter: <span class="text-gray-800 text-sm">${issue.author}</span></p>
+            <div class="flex text-center items-center gap-5 border p-3 rounded-full">
+                <p>Author: <span class="text-gray-800 text-sm">${issue.author}</span></p>
                 <p>Created At: <span class="text-gray-800 text-sm">${issue.createdAt}</span></p>
             </div>
             <div>
-                <p>Priority</p><p class="text-orange-500 text-sm">${issue.priority}</p>
+                <p class ="border p-3 rounded-full">Priority: <span class="text-orange-500 text-sm">${issue.priority}</span> </p>
             </div>
         </div>
-        <div class="flex justify-between gap-5 text-xs font-bold uppercase text-gray-400">
+        <div class="flex justify-between gap-5 text-xs border p-3 rounded-full font-bold uppercase text-gray-400">
             <div class="flex text-center items-center gap-4">
-                <p>Reporter: <span class="text-gray-800 text-sm">${issue.assignee}</span></p>
-                <p>Created At: <span class="text-gray-800 text-sm">${issue.updatedAt}</span></p>
+                <p>Assignee: <span class="text-gray-800 text-sm">${issue.assignee}</span></p>
+                <p>Updated At: <span class="text-gray-800 text-sm">${issue.updatedAt}</span></p>
             </div>
         </div>
     `;

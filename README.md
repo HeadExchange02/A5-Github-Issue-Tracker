@@ -32,3 +32,5 @@ Instead of using single or double quotes, we use backticks (``). This allows us 
 
 ## Live Link 
 https://headexchange02.github.io/A5-Github-Issue-Tracker/
+
+https://github-issues-tracker-flash.netlify.app/

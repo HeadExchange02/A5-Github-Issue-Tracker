@@ -95,6 +95,7 @@ function changeTab(type, btn) {
     else renderData(allData.filter(i => i.status === type));
 }
 
+// Show Modal Function
 async function getSingleIssue(id) {
     const res = await fetch(`https://phi-lab-server.vercel.app/api/v1/lab/issue/${id}`);
     const data = await res.json();

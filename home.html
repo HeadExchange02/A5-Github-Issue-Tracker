@@ -22,10 +22,10 @@
                     <h3 class="font-semibold text-xl">Github Issue Tracker</h3>
                 </div>
                 <div class="flex gap-2">
-                    <input type="text" placeholder="Search"
+                    <input id="search-box" type="text" placeholder="Search issues"
                         class="input input-bordered px-5 py-1.5 rounded-full text-sm w-30 md:w-auto" />
-                    <button id="add-issue-btn"
-                        class="btn btn-soft btn-primary rounded-full cursor-pointer transition-all duration-200">Search</button>
+                    <button id="search-issue-btn"
+                        class="btn btn-soft btn-primary rounded-full cursor-pointer transition-all duration-200" onclick="handleSearch()">Search</button>
                 </div>
             </div>
         </div>

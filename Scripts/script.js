@@ -114,4 +114,15 @@ async function getSingleIssue(id) {
     document.getElementById('details_modal').showModal();
 }
 
+// handleSearch function
+async function handleSearch() {
+    const q = document.getElementById("search-box").value;
+    if (!q) return;
+    showLoading();
+    const res = await fetch(`https://phi-lab-server.vercel.app/api/v1/lab/issues/search?q=${q}`)
+    const data = await res.json();
+    renderData(data.data);
+    hideLoading();
+}
+
 allIssuesData();
